@@ -32,6 +32,7 @@ class NewVisitorTest(StaticLiveServerTestCase):
     def test_can_start_a_list_for_one_user(self):
         # Edith has heard about a cool new online to-do app. She goes
         self.browser.get(self.live_server_url)
+        self.browser.set_window_size(1024, 768)
 
         self.assertIn('To-Do list', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
@@ -42,6 +43,11 @@ class NewVisitorTest(StaticLiveServerTestCase):
             inputbox.get_attribute('placeholder'),
             'Enter a to-do item'
         )
+        '''self.assertAlmostEqual(
+            inputbox.location['x'] + inputbox.size['width'] / 2,
+            512,
+            delta=10
+        )'''
 
         inputbox.send_keys('Buy peacock feathers')
         inputbox.send_keys(Keys.ENTER)
