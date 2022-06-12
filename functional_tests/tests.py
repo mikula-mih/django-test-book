@@ -32,9 +32,9 @@ class NewVisitorTest(LiveServerTestCase):
         # Edith has heard about a cool new online to-do app. She goes
         self.browser.get(self.live_server_url)
 
-        self.assertIn('To-Do lists', self.browser.title)
+        self.assertIn('To-Do list', self.browser.title)
         header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('To-Do lists', header_text)
+        self.assertIn('To-Do list', header_text)
         
         inputbox = self.browser.find_element_by_id('id_new_item')
         self.assertEqual(
