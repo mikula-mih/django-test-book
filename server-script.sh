@@ -25,4 +25,7 @@ python manage.py migrate --noinput
 python manage.py collectstatic --noinput
 #python manage.py runserver 192.168.1.253:8080
 #python manage.py runserver
-~/sites/#SITENAME/venv/bin/gunicorn superlists.wsgi:application
+
+#~/sites/$SITENAME/venv/bin/gunicorn superlists.wsgi:application
+#~/sites/$SITENAME/venv/bin/gunicorn --bind \
+#    unix:/tmp/superlists-staging.ottg.eu.socket superlists.wsgi:application

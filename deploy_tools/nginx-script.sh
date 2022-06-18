@@ -1,6 +1,6 @@
 #!bin/bash
 
-export SITENAME=supperlists-staging.ottg.eu
+export SITENAME=superlists-staging.ottg.eu
 
 sudo cp nginx_django_default /etc/nginx/sites-available/$SITENAME
 
